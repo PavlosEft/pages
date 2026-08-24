@@ -566,9 +566,36 @@ ul {
         font-size: 0.7rem;
     }
     
-    .first-content h2 {
-        font-size: 1.8rem;
+    .first-section {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 140px; /* Provides absolute space for the menu */
+        padding-bottom: 60px;
+        align-items: flex-start !important; /* Stops centering which pushes text up */
     }
+
+    .first-content {
+        padding-top: 0;
+    }
+    
+    .first-content h2 {
+        font-size: 1.6rem; /* Slightly smaller to fit mobile screens better */
+        margin-bottom: 15px;
+    }
+}
+
+/* Center the last row of the services cards */
+.services-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+.service-card {
+    flex: 0 1 calc(25% - 25px) !important; /* 4 cards per row on large screens */
+    min-width: 250px !important;
+    max-width: 300px !important;
+    width: 100% !important;
 }
 
 @media (max-width: 1150px) {
@@ -579,19 +606,23 @@ ul {
     .main-nav {
         position: fixed;
         top: 70px;
-        left: -100%;
-        width: 100%;
+        right: -100%; /* Hides the menu initially on the right */
+        left: auto;
+        width: 75%;
+        max-width: 300px;
         height: calc(100vh - 70px);
         background-color: var(--white);
         flex-direction: column;
         align-items: flex-start;
         padding: 30px;
-        transition: left 0.3s ease;
+        transition: right 0.3s ease;
         overflow-y: auto;
+        border-bottom-left-radius: 15px;
+        box-shadow: -5px 15px 25px rgba(0, 0, 0, 0.7);
     }
     
     .main-nav.active {
-        left: 0;
+        right: 0; /* Shows the menu when activated */
     }
     
     .nav-links {
