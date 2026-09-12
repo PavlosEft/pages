@@ -31,7 +31,7 @@ html {
 * {
     word-break: normal;
     overflow-wrap: break-word;
-    hyphens: auto;
+    hyphens: none;
 }
 
 /* Center statue image to avoid empty space on zoom */
@@ -276,9 +276,16 @@ ul {
     align-items: center;
     background-image: url('dikigoros-athina-nomikes-ypiresies.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: 75% center;
     background-attachment: fixed;
     margin-top: 70px;
+}
+
+/* Fix iOS background zooming bug */
+@supports (-webkit-touch-callout: none) {
+    .first-section {
+        background-attachment: scroll;
+    }
 }
 
 .first-overlay {
@@ -302,9 +309,9 @@ ul {
     font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
-    word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
+    word-break: normal;
+    hyphens: none;
 }
 
 .first-content p {
