@@ -27,6 +27,18 @@ html {
     font-size: 14px;
 }
 
+/* Prevent text from breaking arbitrarily, only break when exceeding container */
+* {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Center statue image to avoid empty space on zoom */
+img {
+    object-position: center;
+}
+
 body {
     font-family: var(--font-family);
     color: var(--text-color);
