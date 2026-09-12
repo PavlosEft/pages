@@ -669,5 +669,7 @@ ul {
     
     .first-section {
         margin-top: 60px;
+        background-attachment: scroll;
+        background-position: 80% 0%;
     }
 }
